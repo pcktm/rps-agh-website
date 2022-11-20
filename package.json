@@ -1,8 +1,9 @@
 {
-  "name": "@example/basics",
+  "name": "rps-agh-website",
   "type": "module",
   "version": "0.0.1",
-  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "private": false,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
