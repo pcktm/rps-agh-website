@@ -1,42 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GridBlock from "../components/GridBlock.astro";
-import Mark from "../components/Mark.astro";
+import About from "../contents/About.astro";
 import Team from "../contents/Team.astro";
-import Navbar from "../components/Navbar.astro";
+import Contact from "../contents/Contact.astro";
 ---
 
 <Layout title="Rzecznik Praw Studenta AGH">
-	<main class="m-auto sm:mt-4 container">
-		<div class="grid lg:grid-rows-6 grid-cols-1 lg:grid-cols-3 gap-4 lg:grid-flow-col">
-			<div class="lg:row-span-1 lg:col-start-3 flex order-first m-2 mb-0 sm:m-0">
-				<Navbar />
-			</div>
-			<div class="lg:col-span-2 row-span-6">
-				<GridBlock title="O Rzeczniku">
-					<p class="mb-1">
-						Rzecznik Praw Studenta został powołany przez JM Rektora AGH, aby <Mark
-							>pomagać</Mark
-						>
-						studentom w egzekwowaniu ich praw i odpowiada za pomoc w <Mark
-							>wyjaśnianiu wszelkich wątpliwości</Mark
-						>
-						i niejasności.
-					</p>
-					<p>Interweniuje w sytuacjach z zakresu:</p>
-					<ul class="list-disc list-inside">
-						<li>praw i obowiązków studenta,</li>
-						<li>systemu sprawdzania i oceniania,</li>
-						<li>stypendiów,</li>
-						<li>wszelkich postanowień Regulaminu Studiów.</li>
-					</ul>
-				</GridBlock>
-			</div>
-			<div class="lg:col-start-3 lg:row-span-5">
-				<GridBlock title="Zespół Rzecznika Praw Studenta">
-					<Team />
-				</GridBlock>
-			</div>
+	<main class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden">
+		<div>
+			<About />
+		</div>
+		<div class="mt-5">
+			<Team />
+		</div>
+		<div class="mt-5">
+			<Contact />
 		</div>
 	</main>
 </Layout>

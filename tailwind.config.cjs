@@ -16,6 +16,15 @@ module.exports = {
 					"800": "#192aaa",
 					"900": "#0f20a0"
 				}
+			},
+			container: {
+				screens: {
+					"sm": "640px",
+					"md": "768px",
+					"lg": "1024px",
+					"xl": "1024px",
+					"2xl": "1280px"
+				}
 			}
 		},
 	},

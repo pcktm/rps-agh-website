@@ -12,17 +12,11 @@ const initials = name
   .map((n) => n[0])
   .join("");
 
-const parentClasses = [
-  "mt-4 flex items-center space-x-4",
-  isRightToLeft ? "flex-row-reverse space-x-reverse" : "flex-row",
-].join(" ");
 ---
 
-<div class={parentClasses}>
-  <div class="shrink-0">
-    <img class="w-13 h-13 rounded-full" src={src} alt={name} />
-  </div>
-  <div class="">
+<div class="flex items-center gap-4 md:gap-2 flex-row md:flex-col md:justify-center">
+  <img class="w-13 h-13 lg:w-24 lg:h-24 rounded-full" src={src} alt={name} />
+  <div class="flex flex-col md:items-center md:text-center">
     <div class="text-lg font-medium">{name}</div>
     <div class="text-sm text-slate-500">{role}</div>
   </div>
