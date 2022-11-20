@@ -1,0 +1,20 @@
+---
+export interface Props {
+  title: string;
+  class?: string;
+}
+
+const { title } = Astro.props;
+
+const parentClasses = [
+  "bg-stone-50 sm:bg-white px-5 py-4 rounded-lg sm:shadow display-block break-inside-avoid-column",
+  Astro.props.class,
+].join(" ");
+---
+
+<section class={parentClasses}>
+  <h1 class="font-bold text-2xl">{title}</h1>
+  <div>
+    <slot />
+  </div>
+</section>

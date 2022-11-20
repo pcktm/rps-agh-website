@@ -1,0 +1,28 @@
+---
+import Avatar from "../components/Avatar.astro";
+
+const members = [
+  {
+    name: "Agnieszka Zatyka-Szlachcic",
+    role: "Rzecznik Praw Studenta",
+    src: "https://placekitten.com/75/75"
+  },
+  {
+    name: "Dawid Słomnicki",
+    role: "Asystent Rzecznika",
+    src: "https://placekitten.com/75/77"
+  },
+  {
+    name: "Małgorzata Sajdak",
+    role: "Asystentka Rzecznika",
+    src: "https://placekitten.com/75/74"
+  },
+]
+
+---
+
+<div>
+  {members.map((member, index) => (
+    <Avatar {...member}  />
+  ))}
+</div>

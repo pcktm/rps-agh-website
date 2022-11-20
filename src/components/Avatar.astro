@@ -1,0 +1,29 @@
+---
+export interface Props {
+  src: string;
+  name: string;
+  role: string;
+  isRightToLeft?: boolean;
+}
+
+const { src, name, role, isRightToLeft = false } = Astro.props;
+const initials = name
+  .split(" ")
+  .map((n) => n[0])
+  .join("");
+
+const parentClasses = [
+  "mt-4 flex items-center space-x-4",
+  isRightToLeft ? "flex-row-reverse space-x-reverse" : "flex-row",
+].join(" ");
+---
+
+<div class={parentClasses}>
+  <div class="shrink-0">
+    <img class="w-13 h-13 rounded-full" src={src} alt={name} />
+  </div>
+  <div class="">
+    <div class="text-lg font-medium">{name}</div>
+    <div class="text-sm text-slate-500">{role}</div>
+  </div>
+</div>
