@@ -22,8 +22,8 @@ const { title } = Astro.props;
 		<meta name="author" content="Jakub Kopańko" />
 		<title>{title}</title>
 	</head>
-	<body class="bg-stone-50">
-		<div class="shadow min-w-screen rounded-b-lg sm:rounded-lg overflow-hidden container mx-auto sm:mt-4">
+	<body class="bg-stone-50 font-work-sans">
+		<div class="shadow min-w-screen rounded-b-lg bg-stone-50 sm:rounded-lg overflow-hidden container mx-auto sm:mt-4">
 			<Header />
 			<Navbar />
 		</div>
@@ -32,12 +32,6 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	html {
-		font-family: "Work Sans", system-ui, sans-serif;
-	}
-	h1, h2, h3, h4, h5, h6 {
-		font-family: "Sen", sans-serif;
-	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;

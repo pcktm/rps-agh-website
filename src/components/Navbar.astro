@@ -9,11 +9,11 @@ const links: {path: string, title: string}[] = [
 
 ---
 
-<nav class="container mx-auto bg-white px-5 py-4 rounded-b-lg w-full h-full flex flex-col sm:flex-row justify-center align-center">
+<nav class="mx-auto bg-white border-brand-300 shadow-inner px-5 py-4 rounded-b-lg w-full h-full flex flex-col sm:flex-row justify-center align-center">
   {
     links.map((link) => (
       <div class="mx-1 p-2">
-        <a href={link.path} class={`${currentPath === link.path ? 'underline' : 'hover:underline'}`}>{link.title}</a>
+        <a href={link.path} class={`decoration-brand-400 decoration-2 ${currentPath === link.path ? 'underline' : 'hover:underline'}`}>{link.title}</a>
       </div>
     ))
   }

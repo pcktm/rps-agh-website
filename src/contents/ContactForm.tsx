@@ -12,7 +12,7 @@ const TextInput = ({ htmlFor, label, placeholder, register, error, errorLabel = 
         <input
           type={type}
           id={htmlFor}
-          className={`block w-full pl-10 p-2.5 rounded-md border-transparent bg-gray-100 focus:border-gray-500 focus:bg-white focus:ring-0 ${error ? "border-red-500 focus:border-red-500 placeholder-red-600" : ""}`}
+          className={`block w-full pl-10 p-2.5 rounded-md border-transparent bg-gray-100 focus:bg-white focus:ring-0 ${error ? "border-red-500 focus:border-red-500 placeholder-red-600" : "border-brand-50 focus:border-brand-400"}`}
           placeholder={placeholder}
           {...register}
           disabled={disabled}
@@ -79,7 +79,7 @@ export default function ContactForm() {
         <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Wiadomość</label>
         <textarea
           id="message"
-          className="block w-full h-24 p-2.5 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+          className="block w-full h-24 p-2.5 rounded-md bg-gray-100 border-brand-50 border-transparent focus:border-brand-400 focus:bg-white focus:ring-0"
           placeholder="Dzień dobry..."
           disabled={sending}
           {...register("message", { required: true })}

@@ -9,7 +9,7 @@ import Avatar from "../components/Avatar.astro";
 ---
 
 <Layout title="Rzecznik Praw Studenta AGH">
-	<main class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden">
+	<main class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden border-brand-300">
 		<div>
 			<About />
 		</div>
@@ -17,7 +17,7 @@ import Avatar from "../components/Avatar.astro";
 			<TitledSection title="Zespół Rzecznika Praw Studenta AGH">
 				<div class="flex gap-4 flex-col md:flex-row mt-4">
 					{members.map((member, index) => (
-						<div class="flex-1 bg-gray-100 shadow-inner p-5 rounded-lg">
+						<div class="flex-1 bg-gray-100 shadow-inner border-brand-100 border p-5 rounded-lg">
 							<Avatar member={member}  />
 						</div>
 					))}

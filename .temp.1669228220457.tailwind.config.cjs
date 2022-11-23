@@ -30,7 +30,6 @@ module.exports = {
 			fontFamily: {
 				"sen": ["Sen", "sans-serif"],
 				"work-sans": ["Work Sans", "sans-serif"]
-			},
 		},
 	},
 	plugins: [
