@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import About from "../contents/About.astro";
-import Team from "../contents/Team.astro";
+import members from "../contents/team";
 import Contact from "../contents/Contact.astro";
+import ContactForm from "../contents/ContactForm";
+import TitledSection from "../components/TitledSection.astro";
+import Avatar from "../components/Avatar.astro";
 ---
 
 <Layout title="Rzecznik Praw Studenta AGH">
@@ -11,12 +14,23 @@ import Contact from "../contents/Contact.astro";
 			<About />
 		</div>
 		<div class="mt-5">
-			<Team />
+			<TitledSection title="Zespół Rzecznika Praw Studenta AGH">
+				<div class="flex gap-4 flex-col md:flex-row mt-4">
+					{members.map((member, index) => (
+						<div class="flex-1 bg-gray-100 shadow-inner p-5 rounded-lg">
+							<Avatar member={member}  />
+						</div>
+					))}
+				</div>
+			</TitledSection>
+		</div>
+		<div class="mt-8">
+			<TitledSection title="Skontaktuj się z Rzecznikiem">
+				<ContactForm client:idle />
+			</TitledSection>
 		</div>
 		<div class="mt-5">
 			<Contact />
 		</div>
 	</main>
 </Layout>
-
-<style></style>

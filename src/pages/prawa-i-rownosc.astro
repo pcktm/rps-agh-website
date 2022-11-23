@@ -1,0 +1,54 @@
+---
+import TitledSection from "../components/TitledSection.astro";
+import Layout from "../layouts/Layout.astro";
+import members from "../contents/team";
+import Mark from "../components/Mark.astro";
+---
+
+<Layout title="Prawa i Równość w AGH - Rzecznik Praw Studenta">
+	<main
+		class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden"
+	>
+		<TitledSection title="Prawa i Równość w AGH">
+			<p>Jakiś tekst o równości i oczywiście o prawach też tutaj</p>
+		</TitledSection>
+		<TitledSection containerClass="mt-3" title="Rzecznik Praw Studenta">
+			<div class="flex flex-col xl:flex-row w-full gap-4 mt-4">
+				{
+					members.map((member) => {
+						return (
+							<div class="flex flex-col flex-1 p-5 bg-gray-100 shadow-inner rounded-lg">
+								<div class="flex flex-1">
+									<div class="flex flex-col align-center">
+										<img src={member.src} class="w-32 h-32 rounded-full" alt={member.name} />
+										<div class="mt-2 text-xl font-medium">{member.name}</div>
+										<div class="text-lg text-gray-700">{member.role}</div>
+									</div>
+								</div>
+								<p class="mt-2">{member.description}</p>
+								<a href={`mailto:${member.email}`} class="text-brand-700 text-sm mt-2 self-end">
+									{member.email}
+								</a>
+							</div>
+						);
+					})
+				}
+			</div>
+			<p class="mt-7">
+				Od 2016 do 2021 roku funkcję RPS AGH pełniła <Mark>prof. dr hab. inż. Manuela Reben.</Mark>
+			</p>
+			<p class="mt-2">Asystentami RPS AGH byli studenci:</p><ul
+				class="list-inside list-disc"
+			>
+				<li>Marzena Stupkiewicz</li>
+				<li>Mikołaj Gralczyk</li>
+				<li>Iwona Mika</li>
+				<li>Konrad Marszałek</li>
+				<li>Dorota Pachuta</li>
+				<li>Kamil Wróbel</li>
+				<li>Joanna Brezdeń</li>
+				<li>Maciej Augustyński</li>
+			</ul>
+		</TitledSection>
+	</main>
+</Layout>
