@@ -1,4 +1,5 @@
 ---
+import Credit from "./Credit";
 
 var currentYear = new Date().getFullYear();
 
@@ -10,11 +11,5 @@ var currentYear = new Date().getFullYear();
   <span class="text-sm text-gray-500 sm:text-center">
     © {currentYear} RPS AGH
   </span>
-  <ul
-    class="flex flex-wrap items-center mt-3 text-sm text-gray-500 sm:mt-0"
-  >
-    <li>
-       by <a href="https://kopanko.com" target="_blank" class="hover:underline">Jakub</a>
-    </li>
-  </ul>
+  <Credit client:visible />
 </footer>

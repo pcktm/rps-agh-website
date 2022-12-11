@@ -43,7 +43,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mt-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="mt-2 flex flex-col">
       <div className="flex flex-col-reverse sm:flex-row gap-2 sm:gap-4">
         <TextInput
           htmlFor="email-input"
@@ -89,7 +89,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={sending}
-        className="mt-3 flex justify-center w-24 text-white bg-brand-600 hover:bg-brand-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center"
+        className="mt-3 self-end flex justify-center w-24 text-white bg-brand-600 hover:bg-brand-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center"
       >
         {
           sending ? (
