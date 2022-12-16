@@ -6,11 +6,13 @@ import Contact from "../contents/Contact.astro";
 import ContactForm from "../contents/ContactForm";
 import TitledSection from "../components/TitledSection.astro";
 import Avatar from "../components/Avatar.astro";
+import Gallery from "../components/Gallery.astro";
 ---
 
 <Layout title="Rzecznik Praw Studenta AGH">
+	<Gallery />
 	<main class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden border-brand-300">
-		<div>
+		<div class="md:mt-3">
 			<About />
 		</div>
 		<div class="mt-5">
