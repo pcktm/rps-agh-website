@@ -5,9 +5,9 @@ import img3 from "../assets/rps3.jpg";
 ---
 
 <div class="container mx-auto">
-  <div class="flex w-full justify-center mt-4">
+  <div class="grid grid-cols-4 sm:grid-cols-3 w-full justify-center mt-5 px-3 sm:px-0 gap-2 sm:gap-0">
     <div
-      class="p-1 shadow-lg bg-white overflow-hidden rounded-lg first-image flex-1"
+      class="p-0.5 md:p-1 sm:col-span-1 col-span-2 shadow-lg bg-white overflow-hidden rounded-xl -rotate-[6deg] sm:translate-x-4 sm:translate-y-3 z-0"
     >
       <img
         src={img3}
@@ -16,7 +16,7 @@ import img3 from "../assets/rps3.jpg";
       />
     </div>
     <div
-      class="p-1 shadow-xl bg-white overflow-hidden rounded-lg second-image flex-1"
+      class="p-0.5 md:p-1 sm:col-span-1 col-span-2 shadow-xl bg-white overflow-hidden rounded-xl rotate-1 -translate-x-3 sm:translate-x-0 translate-y-3 sm:z-20"
     >
       <img
         src={img1}
@@ -25,7 +25,7 @@ import img3 from "../assets/rps3.jpg";
       />
     </div>
     <div
-      class="p-1 shadow-lg bg-white overflow-hidden rounded-lg last-image flex-1"
+      class="p-0.5 md:p-1 sm:col-span-1 col-span-2 col-start-2 shadow-lg bg-white overflow-hidden rounded-xl -translate-y-6 rotate-3 sm:-translate-x-4 sm:translate-y-4 z-20 sm:z-10"
     >
       <img
         src={img2}
@@ -35,18 +35,3 @@ import img3 from "../assets/rps3.jpg";
     </div>
   </div>
 </div>
-
-<style lang="scss">
-  .first-image {
-    transform: rotateZ(-6deg) translateX(15px) translateY(15px);
-    z-index: 1;
-  }
-  .second-image {
-    transform: rotateZ(1deg) translateX(0px) translateY(10px);
-    z-index: 2;
-  }
-  .last-image {
-    transform: rotateZ(4deg) translateX(-15px) translateY(15px);
-    z-index: 1;
-  }
-</style>
