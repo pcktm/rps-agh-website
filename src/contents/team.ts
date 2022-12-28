@@ -32,7 +32,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Wiktoria Placek",
-    role: "Asystentka Rzecznika",
+    role: "Promocja Rzecznika",
     email: "wiktoria.placek@samorzad.agh.edu.pl",
     src: "https://placekitten.com/75/78",
     description: `Studentka IV roku Technologii Chemicznej na Wydziale Energetyki i Paliw. Od 2021 członek Komisji ds. Promocji URSS AGH. W zespole RPS odpowiada za promocję. W wolnym czasie jeździ na rolkach i działa w straży pożarnej.`
