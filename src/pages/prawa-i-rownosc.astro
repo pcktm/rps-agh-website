@@ -3,6 +3,7 @@ import TitledSection from "../components/TitledSection.astro";
 import Layout from "../layouts/Layout.astro";
 import members from "../contents/team";
 import Mark from "../components/Mark.astro";
+import PersonBox from "../components/PersonBox.astro";
 ---
 
 <Layout title="Prawa i Równość w AGH - Rzecznik Praw Studenta">
@@ -13,23 +14,16 @@ import Mark from "../components/Mark.astro";
 			<p>Jakiś tekst o równości i oczywiście o prawach też tutaj</p>
 		</TitledSection>
 		<TitledSection containerClass="mt-3" title="Rzecznik Praw Studenta">
+			<div class="flex justify-center">
+				<div class="w-3/4">
+					<PersonBox member={members[0]} />
+				</div>
+			</div>
 			<div class="flex flex-col xl:flex-row w-full gap-4 mt-4">
 				{
-					members.map((member) => {
+					members.slice(1).map((member) => {
 						return (
-							<div class="flex flex-col flex-1 p-5 bg-gray-100 shadow-inner rounded-lg border-brand-100 border">
-								<div class="flex flex-1">
-									<div class="flex flex-col align-center">
-										<img src={member.src} class="w-28 h-28 sm:w-32 sm:h-32 rounded-full" alt={member.name} />
-										<div class="mt-2 text-xl font-medium">{member.name}</div>
-										<div class="text-lg text-gray-700">{member.role}</div>
-									</div>
-								</div>
-								<p class="mt-2">{member.description}</p>
-								<a href={`mailto:${member.email}`} class="text-brand-700 text-sm mt-2 self-end">
-									{member.email}
-								</a>
-							</div>
+							<PersonBox member={member} />
 						);
 					})
 				}

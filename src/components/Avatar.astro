@@ -6,17 +6,12 @@ export interface Props {
 }
 
 const { member } = Astro.props;
-const initials = member.name
-  .split(" ")
-  .map((n) => n[0])
-  .join("");
-
 ---
 
-<div class="flex items-center gap-4 md:gap-2 flex-row md:flex-col md:justify-center relative">
+<div class="flex items-center gap-4 md:gap-2 flex-row md:flex-col md:justify-center relative rounded-lg py-2">
   <img class="w-24 h-24 rounded-full object-cover object-center" src={member.src} alt={member.name} />
   <div class="flex flex-col md:items-center md:text-center">
-    <div class="text-lg font-medium">{member.name}</div>
-    <div class="text-sm text-slate-500">{member.role}</div>
+    <div class="text-lg font-semibold text-slate-800">{member.name}</div>
+    <div class="text-sm text-slate-600">{member.role}</div>
   </div>
 </div>
