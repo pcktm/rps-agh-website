@@ -1,11 +1,11 @@
 ---
 import members from "../contents/team";
-import Avatar from "./Avatar.astro";
+import Avatar from "../components/Avatar.astro";
 ---
 
 <div class="my-6 flex flex-col gap-4 md:gap-y-5 overflow-hidden rounded-lg">
   <div class="flex md:justify-center">
-    <div class="flex-1 border-brand-700 rounded-lg border-2 py-2 px-3">
+    <div class="flex-1 border-brand-700 rounded-lg border py-2 px-3">
       <Avatar member={members[0]} />
     </div>
   </div>
@@ -14,7 +14,7 @@ import Avatar from "./Avatar.astro";
   >
     {
       members.slice(1).map((member, index) => (
-        <div class="flex-1 border-2 rounded-lg border-brand-700 py-2 px-3">
+        <div class="flex-1 border rounded-lg border-brand-700 py-2 px-3">
           <Avatar member={member} />
         </div>
       ))
