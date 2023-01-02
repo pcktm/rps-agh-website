@@ -1,6 +1,6 @@
 import { useFloating, shift, offset } from '@floating-ui/react-dom';
 import { useEffect, useState } from 'react';
-import szczur from '../assets/szczur.png';
+import jkopankoimg from '../assets/jkopanko.jpg';
 
 export default function Credit() {
   const { x, y, reference, floating, strategy, update } = useFloating({
@@ -40,7 +40,7 @@ export default function Credit() {
         isHovered && (
         <div
           ref={floating}
-          className={`absolute z-10 p-1 pointer-events-none bg-white rounded-lg shadow-lg transition-opacity duration-[4s] delay-[5s] ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute z-10 p-1 pointer-events-none bg-white rounded-lg shadow-lg transition-opacity duration-[3s] delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
           style={{
             position: strategy,
             top: y ?? 0,
@@ -49,8 +49,8 @@ export default function Credit() {
           }}
         >
           <img
-            src={szczur}
-            alt="szczur"
+            src={jkopankoimg}
+            alt="Jakub z kotem na kolanach"
             className="rounded shadow w-32 h-[144px]"
           />
         </div>
