@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import members from "../contents/team";
 import Mark from "../components/Mark.astro";
 import PersonBox from "../components/PersonBox.astro";
+import ogImage from "../assets/ogs/prawa-i-rownosc.png";
 
 const rownoscPeople = [
 	{
@@ -26,7 +27,7 @@ const rownoscPeople = [
 ]
 ---
 
-<Layout title="Prawa i Równość w AGH - Rzecznik Praw Studenta">
+<Layout title="Prawa i Równość w AGH - Rzecznik Praw Studenta" ogImage={ogImage}>
 	<main
 		class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden"
 	>

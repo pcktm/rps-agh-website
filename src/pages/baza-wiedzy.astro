@@ -1,6 +1,7 @@
 ---
 import TitledSection from "../components/TitledSection.astro";
 import Layout from "../layouts/Layout.astro";
+import ogImage from "../assets/ogs/baza-wiedzy.png";
 
 const links: { url: string; title: string }[] = [
   {
@@ -34,7 +35,7 @@ const links: { url: string; title: string }[] = [
 ];
 ---
 
-<Layout title="Baza wiedzy - Rzecznik Praw Studenta">
+<Layout title="Baza wiedzy - Rzecznik Praw Studenta" ogImage={ogImage}>
   <main
     class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden"
   >
