@@ -1,4 +1,5 @@
 import msajdakimg from '../assets/msajdak.jpg'
+import azatykaimg from '../assets/azatyka.jpg'
 
 export type TeamMember = {
   name: string;
@@ -12,7 +13,7 @@ const team: TeamMember[] = [
   {
     name: "Agnieszka Zatyka-Szlachcic",
     role: "Rzecznik Praw Studenta",
-    src: "https://placekitten.com/75/75",
+    src: azatykaimg,
     email: 'azsz@agh.edu.pl',
     description: `Prawnik, pracownik Działu Spraw Studenckich. Od 2021 r. członek Akademickiej Sieci Bezpieczeństwa i równości (ASBiR), od 2022 r. członek European Network of Ombuds in Higher Education (ENOHE). Lubi teatr, dobre kino i książki oraz odpoczynek na łonie natury.`
   },
