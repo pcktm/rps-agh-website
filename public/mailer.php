@@ -7,10 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 if (!isset($_POST['message'], $_POST['sender'], $_POST['name'])) die('Missing data!');
 if (!filter_var($_POST['sender'], FILTER_VALIDATE_EMAIL)) die('Invalid email!');
 
-if (substr($_POST['sender'], -10) !== 'agh.edu.pl') die('Invalid email!');
-
 $recipients = [
-    'gigatest@kopanko.com',
+    'rps@agh.edu.pl',
 ];
 
 $sender_email = filter_var($_POST['sender'], FILTER_SANITIZE_EMAIL);
@@ -35,8 +33,8 @@ $constructed_message = sprintf('
 Od: %s <%s>
 Wysłano: %s
 Id: %s
-
 Treść:
+
 %s
 ', $sender_name, $sender_email, $date, uniqid(), $message);
 

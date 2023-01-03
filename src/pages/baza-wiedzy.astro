@@ -2,8 +2,9 @@
 import TitledSection from "../components/TitledSection.astro";
 import Layout from "../layouts/Layout.astro";
 import ogImage from "../assets/ogs/baza-wiedzy.png";
+import PodcastBanner from "../components/PodcastBanner.astro";
 
-const links: { url: string; title: string }[] = [
+const linksTop: { url: string; title: string }[] = [
   {
     url: "https://www.cok.agh.edu.pl/fileadmin/_migrated/COK/DOS/pliki/akty_prawne/RS_AGH/2022_reg._stud._27_04_2022_46_-tj..pdf",
     title:
@@ -19,6 +20,10 @@ const links: { url: string; title: string }[] = [
     url: "https://www.agh.edu.pl/home/ckim/dokumenty/akty_prawne/Statut_AGH_zalacznik_do_uchwaly_Senatu_90_2021.pdf",
   },
   {
+    title: "Kodeks Etyki Studenta AGH",
+    url: "https://samorzad.agh.edu.pl/wp-content/uploads/2017/12/KodeksEtykiStudentaAGH.pdf",
+  },
+  {
     title: "Akademicki Kodeks Etyczny",
     url: "https://www.agh.edu.pl/o-agh/dokumenty/inne/kodeks-etyczny-agh",
   },
@@ -28,8 +33,28 @@ const links: { url: string; title: string }[] = [
     url: "https://www.dss.agh.edu.pl/fileadmin/default/templates/css/j/dss/system/2022/Regulamin_swiadczen_22_23/Zarzadzenie_59_22_zalacznik_nr_1-1.pdf",
   },
   {
-    title: "Portal Prawa Studenta prowadzony przez Parlament Studentów Rzeczypospolitej Polskiej",
+    title:
+      "Portal Prawa Studenta prowadzony przez Parlament Studentów Rzeczypospolitej Polskiej",
     url: "https://prawastudenta.edu.pl",
+  },
+];
+
+const linksBottom: { url: string; title: string }[] = [
+  {
+    title: "Dział Spraw Studenckich AGH",
+    url: "https://www.dss.agh.edu.pl",
+  },
+  {
+    title: "Centrum Organizacji Kształcenia AGH",
+    url: "https://www.cok.agh.edu.pl",
+  },
+  {
+    title: "Department for International Students",
+    url: "https://www.international.agh.edu.pl/eng/contact-us/",
+  },
+  {
+    title: "Centrum Rekrutacji AGH",
+    url: "https://rekrutacja.agh.edu.pl/",
   },
 ];
 ---
@@ -38,13 +63,13 @@ const links: { url: string; title: string }[] = [
   <main
     class="mx-auto bg-white p-4 sm:px-6 sm:py-5 rounded-lg sm:shadow mt-2 sm:mt-3 container overflow-hidden"
   >
+    <div class="mb-4 mt-2 cursor-pointer">
+      <PodcastBanner />
+    </div>
     <TitledSection title="Baza wiedzy">
-      <p>
-        Podstawy prawne (zawierają najwięcej przydatnych informacji) tworzą:
-      </p>
       <ul class="mt-2 list-inside list-disc">
         {
-          links.map((link) => (
+          linksTop.map((link) => (
             <li>
               <a
                 href={link.url}
@@ -57,28 +82,22 @@ const links: { url: string; title: string }[] = [
           ))
         }
       </ul>
-      <p class="mt-4">
-        Źródła istotnych informacji dla studentów i pracowników:
-      </p>
+
+      <p class="mt-6">Źródła istotnych informacji dla studentów:</p>
       <ul class="mt-2 list-inside list-disc">
-        <li>
-          <a
-            href="https://www.dss.agh.edu.pl"
-            target="_blank"
-            class="hover:underline text-brand-500 hover:text-brand-700"
-          >
-            Dział Spraw Studenckich AGH
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.cok.agh.edu.pl"
-            target="_blank"
-            class="hover:underline text-brand-500 hover:text-brand-700"
-          >
-            Centrum Organizacji Kształcenia AGH
-          </a>
-        </li>
+        {
+          linksBottom.map((link) => (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                class="hover:underline text-brand-500 hover:text-brand-700"
+              >
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </TitledSection>
   </main>
