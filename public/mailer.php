@@ -1,17 +1,34 @@
 <?php
+header('Content-Type: text/plain; charset=utf-8');
+$allowed_origins = [
+    'https://rps.agh.edu.pl',
+    'https://rps.ursstech.pl',
+    'http://localhost:3000',
+];
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+if (in_array($origin, $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     die('Method not allowed!');
 }
 
-if (!isset($_POST['message'], $_POST['sender'], $_POST['name'])) die('Missing data!');
-if (!filter_var($_POST['sender'], FILTER_VALIDATE_EMAIL)) die('Invalid email!');
+if (!isset($_POST['message'], $_POST['email'], $_POST['name'])) {
+    http_response_code(400);
+    die('Missing data!');
+};
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    die('Invalid email!');
+};
 
 $recipients = [
-    'rps@agh.edu.pl',
+    'kopanko@student.agh.edu.pl',
 ];
 
-$sender_email = filter_var($_POST['sender'], FILTER_SANITIZE_EMAIL);
+$sender_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $sender_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
@@ -21,7 +38,7 @@ $headers = [
 ];
 
 $recipients = implode(', ', $recipients);
-$subject = sprintf('[Formularz] Nowa wiadomość od %s', $sender_name, $sender_email);
+$subject = sprintf('[Formularz] %s', $sender_name);
 
 # php's INSANE utf8 handling
 $preferences = ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8'];
