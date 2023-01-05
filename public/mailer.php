@@ -2,11 +2,12 @@
 header('Content-Type: text/plain; charset=utf-8');
 $allowed_origins = [
     'https://rps.agh.edu.pl',
-    'https://rps.ursstech.pl',
     'http://localhost:3000',
 ];
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
-if (in_array($origin, $allowed_origins)) {
+if ($origin === 'http://localhost:3000') {
+    header('Access-Control-Allow-Origin: *');
+} else if (in_array($origin, $allowed_origins)) {
     header('Access-Control-Allow-Origin: ' . $origin);
 }
 
@@ -25,7 +26,7 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 };
 
 $recipients = [
-    'kopanko@student.agh.edu.pl',
+    'rps@agh.edu.pl',
 ];
 
 $sender_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
