@@ -1,5 +1,7 @@
 import msajdakimg from '../assets/msajdak.jpg'
 import azatykaimg from '../assets/azatyka.jpg'
+import wplacekimg from '../assets/wplacek.jpg'
+import dslomnickiimg from '../assets/dslomnicki.jpg'
 
 export type TeamMember = {
   name: string;
@@ -28,14 +30,14 @@ const team: TeamMember[] = [
     name: "Dawid Słomnicki",
     role: "Asystent Rzecznika",
     email: "dawid.slomnicki@samorzad.agh.edu.pl",
-    src: "https://placekitten.com/75/77",
+    src: dslomnickiimg,
     description: `Student III roku Informatyki i Systemów Inteligentnych na Wydziale Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej. Od roku 2021 członek Komisji ds. Dydaktyki i Jakości Kształcenia URSS. Miłośnik dobrego kodu i regulaminu.`
   },
   {
     name: "Wiktoria Placek",
     role: "Promocja Rzecznika",
     email: "wiktoria.placek@samorzad.agh.edu.pl",
-    src: "https://placekitten.com/75/78",
+    src: wplacekimg,
     description: `Studentka IV roku Technologii Chemicznej na Wydziale Energetyki i Paliw. Od 2021 członek Komisji ds. Promocji URSS AGH. W zespole RPS odpowiada za promocję. W wolnym czasie jeździ na rolkach i działa w straży pożarnej.`
   }
 ]
