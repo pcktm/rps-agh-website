@@ -17,7 +17,7 @@ const team: TeamMember[] = [
     role: "Rzecznik Praw Studenta",
     src: azatykaimg,
     email: 'azsz@agh.edu.pl',
-    description: `Prawniczka, absolwentka WPiA UJ, początkująca mediatorka. Od 2021 r. członkini Akademickiej Sieci Bezpieczeństwa i równości (ASBiR), a od 2022 r. – European Network of Ombuds in Higher Education (ENOHE). Miłośniczka kina i literatury non-fiction oraz odpoczynku na łonie natury.`
+    description: `Prawniczka, absolwentka WPiA UJ, mediatorka. Od 2021 r. członkini Akademickiej Sieci Bezpieczeństwa i równości (ASBiR), a od 2022 r. – European Network of Ombuds in Higher Education (ENOHE). Miłośniczka kina i literatury non-fiction oraz odpoczynku na łonie natury.`
   },
   {
     name: "Małgorzata Sajdak",

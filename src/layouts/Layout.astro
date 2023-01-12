@@ -15,7 +15,7 @@ export interface Props {
 const {
 	title = "Rzecznik Praw Studenta AGH",
 	ogImage = mainOgImage,
-	description
+	description = "Napotkałeś problemy na studiach? Dowiedz się jak uzyskać pomoc. Rzecznik Praw Studenta AGH pomaga studentom, odpowiada na pytania, wyjaśnia wszelkie wątpliwości.",
 } = Astro.props;
 ---
 
@@ -26,9 +26,13 @@ const {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name='og:site_name' content='Rzecznik Praw Studenta AGH' />
-		{description && <meta name='description' content={description} />}
-		{ogImage && <meta name='og:image' content={ogImage} />}
+		<meta name="og:site_name" content='Rzecznik Praw Studenta AGH' />
+		<meta name="description" content={description} />
+		<meta name="og:image" content={ogImage} />
+		<meta name="og:title" content={title} />
+		<meta name="og:description" content={description} />
+		<meta name="twitter:card" content="summary_large_image" />
+		
 		<title>{title}</title>
 		<script defer data-domain="rps.agh.edu.pl" src="https://analytics.kopanko.com/js/script.js"></script>
 	</head>
