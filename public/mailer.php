@@ -33,18 +33,18 @@ $sender_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $sender_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
-$headers = [
-    'From' => sprintf('%s <%s>', $sender_name, $sender_email),
-    'Reply-To' => $sender_email,
-];
-
 $recipients = implode(', ', $recipients);
 $subject = sprintf('[Formularz] %s', $sender_name);
+$subject_base64 = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
-# php's INSANE utf8 handling
-$preferences = ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8'];
-$encoded_subject = iconv_mime_encode('Subject', $subject, $preferences);
-$encoded_subject = substr($encoded_subject, strlen('Subject: '));
+$from = '=?UTF-8?B?' . base64_encode($sender_name) . '?= <' . $sender_email . '>';
+
+$headers = [
+    'From' => $from,
+    'Reply-To' => $sender_email,
+    'Content-Type' => 'text/plain; charset=utf-8',
+    'Content-Transfer-Encoding' => 'base64',
+];
 
 $date = date('Y-m-d H:i:s');
 $constructed_message = sprintf('
@@ -56,7 +56,9 @@ Treść:
 %s
 ', $sender_name, $sender_email, $date, uniqid(), $message);
 
-$res = mail($recipients, $encoded_subject, $constructed_message, $headers);
+$message_base64 = base64_encode($constructed_message);
+
+$res = mail($recipients, $subject_base64, $message_base64, $headers);
 
 if ($res) {
     echo 'OK';
