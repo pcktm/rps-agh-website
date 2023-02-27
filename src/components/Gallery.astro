@@ -1,37 +1,44 @@
 ---
-import img1 from "../assets/rps1.jpg";
-import img2 from "../assets/rps2.jpg";
-import img3 from "../assets/rps3.jpg";
+import { Picture } from "astro-imagetools/components";
 ---
 
-<div class="container mx-auto">
+<div class="container mx-auto" data-nosnippet="true">
   <div class="grid grid-cols-4 sm:grid-cols-3 w-full justify-center mt-5 px-3 sm:px-0 gap-2 sm:gap-0">
     <div
       class="p-0.5 md:p-1 sm:col-span-1 col-span-2 shadow-lg bg-white overflow-hidden rounded-xl -rotate-[6deg] sm:translate-x-4 sm:translate-y-3 z-0"
     >
-      <img
-        src={img3}
-        alt="Zdjęcie przedstawiające Gosię, Panią Agnieszkę i Wiktorię na Festiwalu Innowacji Studenckich AGH"
-        class="rounded-lg h-full w-full object-cover"
-      />
+      <div class="rounded-lg overflow-hidden h-full w-full">
+        <Picture
+          src="/src/assets/rps3.jpg"
+          alt="Zdjęcie przedstawiające Gosię, Panią Agnieszkę i Wiktorię na Festiwalu Innowacji Studenckich AGH"
+          loading="eager"
+          placeholder="blurred"
+        />
+      </div>
     </div>
     <div
       class="p-0.5 md:p-1 sm:col-span-1 col-span-2 shadow-xl bg-white overflow-hidden rounded-xl rotate-1 -translate-x-3 sm:translate-x-0 translate-y-3 sm:z-20"
     >
-      <img
-        src={img1}
-        alt="Zdjęcie przedstawiające wszystkich członków RPS-a na ściance Samorządu"
-        class="rounded-lg h-full w-full object-cover"
-      />
+      <div class="rounded-lg overflow-hidden h-full w-full">
+        <Picture
+          src="/src/assets/rps1.jpg"
+          alt="Zdjęcie przedstawiające wszystkich członków RPS-a na ściance Samorządu"
+          loading="eager"
+          placeholder="blurred"
+        />
+      </div>
     </div>
     <div
       class="p-0.5 md:p-1 sm:col-span-1 col-span-2 col-start-2 shadow-lg bg-white overflow-hidden rounded-xl -translate-y-6 rotate-3 sm:-translate-x-4 sm:translate-y-4 z-20 sm:z-10"
     >
-      <img
-        src={img2}
-        alt="Zdjęcie przedstawiające Pełnomocniczkę ds. Równości, Rzecznika Praw Studenta, Rzecznika ds. Równości AGH, Wiktorię i Gosię przed budynkiem B1 AGH"
-        class="rounded-lg h-full w-full object-cover"
-      />
+      <div class="rounded-lg overflow-hidden h-full w-full">
+        <Picture
+          src="/src/assets/rps2.jpg"
+          alt="Zdjęcie przedstawiające Pełnomocniczkę ds. Równości, Rzecznika Praw Studenta, Rzecznika ds. Równości AGH, Wiktorię i Gosię przed budynkiem B1 AGH"
+          loading="eager"
+          placeholder="blurred"
+        />
+      </div>
     </div>
   </div>
 </div>
