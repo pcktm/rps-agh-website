@@ -6,25 +6,6 @@ import Mark from "../components/Mark.astro";
 import PersonBox from "../components/PersonBox.astro";
 import ogImage from "../assets/ogs/prawa-i-rownosc.png";
 
-const rownoscPeople = [
-	{
-		name: "Artur Lesner",
-		role: "Rzecznik Równości",
-		mail: [
-			"rzecznikrownosci@agh.edu.pl",
-			"lesner@agh.edu.pl"
-		],
-		description: `Prawnik, pracownik Biura Rektora. Od 2022 roku członek Akademickiej Sieci Bezpieczeństwa i równości (ASBiR), członek Okręgowej Izby Radców Prawnych w Krakowie jako aplikant radcowski. Lubi muzykę, w tym wykonywanie muzyki klasycznej, spędzanie czasu w kinach i teatrach oraz podróże po Włoszech.`
-	},
-	{
-		name: "Aleksandra Zalewska",
-		role: "Pełnomocniczka ds. Równości URSS AGH",
-		mail: [
-			"aleksandra.zalewska@samorzad.agh.edu.pl"
-		],
-		description: `Studentka IV roku Inżynierii Materiałowej na Wydziale Inżynierii Materiałowej i Ceramiki. Od 2019 członkini Komisji ds. Logistyki Projektu, a od 2022 również Komisji Rewizyjnej URSS AGH. W wolnym czasie dzierga na szydełku, rysuje oraz czyta. Interesuje się ogólnie pojętą popkulturą oraz sztuką.`
-	}
-]
 ---
 
 <Layout
@@ -37,9 +18,8 @@ const rownoscPeople = [
 	>
 		<p>
 			Rzecznik Praw Studenta oraz Rzecznik Równości to pracownicy uczelni
-			dbający o <Mark>dobro studentów oraz pracowników</Mark>.
-			Interweniują za zgodą osoby
-			zgłaszającej problem.
+			dbający o <Mark>dobro studentów oraz pracowników</Mark>. Interweniują za
+			zgodą osoby zgłaszającej problem.
 		</p>
 		<TitledSection containerClass="mt-3" title="Prawa na AGH" id="prawa">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
@@ -50,7 +30,9 @@ const rownoscPeople = [
 				}
 			</div>
 			<p class="mt-7">
-				Od 2016 do 2021 roku funkcję RPS AGH pełniła <Mark>prof. dr hab. inż. Manuela Reben</Mark>.
+				Od 2016 do 2021 roku funkcję RPS AGH pełniła <Mark>
+					prof. dr hab. inż. Manuela Reben
+				</Mark>.
 			</p>
 			<p class="mt-2">Asystentami RPS AGH byli studenci:</p><ul
 				class="list-inside list-disc"
@@ -63,44 +45,20 @@ const rownoscPeople = [
 				<li>Kamil Wróbel</li>
 				<li>Joanna Brezdeń</li>
 				<li>Maciej Augustyński</li>
+				<li>Wiktoria Placek</li>
 			</ul>
 		</TitledSection>
 		<TitledSection title="Równość na AGH" containerClass="mt-4" id="rownosc">
-			{
-				rownoscPeople.map((person) => {
-					return (
-					<h5 class="font-bold font-sen mt-2 text-lg">{person.role}</h5>
-						<p>
-							<Mark class="font-semibold font-sen">{person.name}</Mark> – {person.description}
-						</p>
-						<div class="mt-2">
-								{
-									person.mail.map((mail) => (
-									<div class="flex flex-row gap-2 text-brand-500 hover:text-brand-700 items-center">
-										<svg
-												xmlns="http://www.w3.org/2000/svg"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke-width="1.5"
-												stroke="currentColor"
-												class="w-5 h-5"
-											>
-												<path
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-												></path>
-											</svg>
-											<a href={`mailto:${mail}`}>
-												{mail}
-											</a>
-										</div>
-									))
-								}
-						</div>
-					)
-				})
-			}
+			Na AGH działa Rzecznik Równości — Artur Lesner ukończył aplikację
+			radcowską, jest pracownikiem Biura Rektora. Więcej na:
+			<a
+				href="https://rownosc.agh.edu.pl/"
+				target="_blank"
+				class="hover:underline text-brand-500 hover:text-brand-700"
+				rel="noopener"
+			>
+				https://rownosc.agh.edu.pl
+			</a>
 		</TitledSection>
 	</main>
 </Layout>
