@@ -1,9 +1,9 @@
 import { useFloating, shift, offset } from '@floating-ui/react-dom';
 import { useEffect, useState } from 'react';
-import jkopankoimg from '../assets/jkopanko.jpg';
+import jkopankoimg from '/src/assets/jkopanko.jpg';
 
 export default function Credit() {
-  const { x, y, reference, floating, strategy, update } = useFloating({
+  const { refs, floatingStyles } = useFloating({
     placement: 'top',
     middleware: [offset(10), shift({padding: 10})],
   });
@@ -26,7 +26,7 @@ export default function Credit() {
             href="https://kopanko.com"
             target="_blank"
             className="hover:underline"
-            ref={reference}
+            ref={refs.setReference}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onTouchStart={() => setIsHovered(true)}
@@ -39,17 +39,15 @@ export default function Credit() {
       {
         isHovered && (
         <div
-          ref={floating}
+          ref={refs.setFloating}
           className={`absolute z-10 p-1 pointer-events-none bg-white rounded-lg shadow-lg transition-opacity duration-[3s] delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
           style={{
-            position: strategy,
-            top: y ?? 0,
-            left: x ?? 0,
             width: 'max-content',
+            ...floatingStyles,
           }}
         >
           <img
-            src={jkopankoimg}
+            src={jkopankoimg.src}
             alt="Jakub z kotem na kolanach"
             className="rounded shadow w-32 h-[144px]"
           />

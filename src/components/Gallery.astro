@@ -1,5 +1,8 @@
 ---
-import { Picture } from "astro-imagetools/components";
+import { Image } from 'astro:assets';
+import rps6 from '/src/assets/rps6.jpg';
+import rps4 from '/src/assets/rps4.jpg';
+import rps5 from '/src/assets/rps5.jpg';
 ---
 
 <div class="container mx-auto" data-nosnippet="true">
@@ -8,11 +11,10 @@ import { Picture } from "astro-imagetools/components";
       class="p-0.5 md:p-1 sm:col-span-1 col-span-2 shadow-lg bg-white overflow-hidden rounded-xl -rotate-[6deg] sm:translate-x-4 sm:translate-y-3 z-0"
     >
       <div class="rounded-lg overflow-hidden h-full w-full text-white">
-        <Picture
-          src="/src/assets/rps6.jpg"
+        <Image
+          src={rps6}
           alt="Zdjęcie przedstawiające Gosię, Panią Agnieszkę i Dawida i Magdę"
           loading="eager"
-          placeholder="blurred"
         />
       </div>
     </div>
@@ -20,11 +22,10 @@ import { Picture } from "astro-imagetools/components";
       class="p-0.5 md:p-1 sm:col-span-1 col-span-2 shadow-xl bg-white overflow-hidden rounded-xl rotate-1 -translate-x-3 sm:translate-x-0 translate-y-3 sm:z-20"
     >
       <div class="rounded-lg overflow-hidden h-full w-full text-white">
-        <Picture
-          src="/src/assets/rps4.jpg"
+        <Image
+          src={rps4}
           alt="Zdjęcie przedstawiające wszystkich członków RPS-a na ściance Samorządu"
           loading="eager"
-          placeholder="blurred"
         />
       </div>
     </div>
@@ -32,11 +33,10 @@ import { Picture } from "astro-imagetools/components";
       class="p-0.5 md:p-1 sm:col-span-1 col-span-2 col-start-2 shadow-lg bg-white overflow-hidden rounded-xl -translate-y-6 rotate-3 sm:-translate-x-4 sm:translate-y-4 z-20 sm:z-10"
     >
       <div class="rounded-lg overflow-hidden h-full w-full text-white">
-        <Picture
-          src="/src/assets/rps5.jpg"
+        <Image
+          src={rps5}
           alt="Zdjęcie przedstawiające Rzecznika Praw Studenta i Magdę"
           loading="eager"
-          placeholder="blurred"
         />
       </div>
     </div>

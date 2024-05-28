@@ -1,12 +1,12 @@
-import msajdakimg from '../assets/msajdak.jpg'
-import azatykaimg from '../assets/azatyka.jpg'
-import marybarczykimg from '../assets/mrybarczyk.jpg'
-import dslomnickiimg from '../assets/dslomnicki.jpg'
+import msajdakimg from '/src/assets/msajdak.jpg'
+import azatykaimg from '/src/assets/azatyka.jpg'
+import marybarczykimg from '/src/assets/mrybarczyk.jpg'
+import dslomnickiimg from '/src/assets/dslomnicki.jpg'
 
 export type TeamMember = {
   name: string;
   role: string;
-  src: string;
+  src: ImageMetadata;
   email: string;
   description: string;
 }
@@ -17,7 +17,7 @@ const team: TeamMember[] = [
     role: "Rzecznik Praw Studenta",
     src: azatykaimg,
     email: 'azsz@agh.edu.pl',
-    description: `Prawniczka, absolwentka WPiA UJ, mediatorka. Od 2021 r. członkini Akademickiej Sieci Bezpieczeństwa i równości (ASBiR), a od 2022 r. – European Network of Ombuds in Higher Education (ENOHE). Miłośniczka kina i literatury non-fiction oraz odpoczynku na łonie natury.`
+    description: `Prawniczka, absolwentka WPiA UJ, mediatorka. Od 2021 r. członkini Akademickiej Sieci Bezpieczeństwa i równości (ASBiR), a od 2022 r. – European Network of Ombuds in Higher Education (ENOHE). Mediatorka Stała przy SO w Krakowie. Miłośniczka kina i literatury non-fiction oraz odpoczynku na łonie natury.`
   },
   {
     name: "Małgorzata Sajdak",

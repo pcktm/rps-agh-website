@@ -1,5 +1,6 @@
 ---
-import { TeamMember } from '../contents/team';
+import type { TeamMember } from '../contents/team';
+import { Image } from 'astro:assets';
 
 export interface Props {
   member: TeamMember;
@@ -10,7 +11,7 @@ const { member, isLarge = false } = Astro.props;
 ---
 
 <div class="flex items-center gap-4 md:gap-2 flex-row md:flex-col md:justify-center relative rounded-lg py-2">
-  <img class:list={["rounded-full object-cover object-center w-28 h-28", isLarge && "lg:w-36 lg:h-36"]} src={member.src} alt={member.name} />
+  <Image class:list={["rounded-full object-cover object-center w-28 h-28", isLarge && "lg:w-36 lg:h-36"]} src={member.src} alt={member.name} />
   <div class="flex flex-col md:items-center md:text-center">
     <div class:list={["font-semibold text-slate-800 text-lg", isLarge && "lg:text-xl"]}>{member.name}</div>
     <div class:list={["text-slate-600", isLarge ? "text-md" : "text-sm"]}>{member.role}</div>

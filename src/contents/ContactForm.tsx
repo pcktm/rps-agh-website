@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 
 const TextInput = ({ htmlFor, label, placeholder, register, error, errorLabel = "", icon, type = "text", disabled = false }) => {
   return (

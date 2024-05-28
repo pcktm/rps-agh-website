@@ -8,7 +8,7 @@ import mainOgImage from '../assets/ogs/main.png';
 
 export interface Props {
 	title: string;
-	ogImage?: string;
+	ogImage?: ImageMetadata;
 	description?: string;
 }
 
@@ -28,7 +28,7 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<meta name="og:site_name" content='Rzecznik Praw Studenta AGH' />
 		<meta name="description" content={description} />
-		<meta name="og:image" content={ogImage} />
+		<meta name="og:image" content={ogImage.src} />
 		<meta name="og:title" content={title} />
 		<meta name="og:description" content={description} />
 		<meta name="twitter:card" content="summary_large_image" />
